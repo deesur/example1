@@ -17,7 +17,7 @@ jobs:
         with: 
           host: ${{ secrets.SERVER }}
           username: student
-          key: $ {{ secrets.SSH }}
+          key: ${{ secrets.SSH }}
           script: |
             echo ${{ secrets.PAT }} | docker login --username ${{ github.actor }} --password-stdin ghcr.io
             docker run --rm --detach ghcr.io/${{ github.actor }}/bot:latest    
