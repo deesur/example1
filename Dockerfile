@@ -1,4 +1,4 @@
-FROM python:3
-RUN pip3 install python-telegram-bot pythonping pyyaml
-COPY echobot.py echobot.py
-CMD [ "python", "./echobot.py" ] 
+FROM python:slime
+COPY . .
+RUN pip3 install python-telegram-bot
+CMD python echobot.py
