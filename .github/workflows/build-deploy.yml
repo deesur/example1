@@ -19,5 +19,5 @@ jobs:
           username: student
           key: $ {{ secrets.SSH }}
           script: |
-            echo ${{ secrets.PAT }} | docker login --username ${{ github.actor }} --password-stdin
-            docker run ghcr.io/${{ github.actor }}/bot:latest      
+            echo ${{ secrets.TOKEN }} | docker login --username ${{ github.actor }} --password-stdin ghcr.io
+            docker run --rm --detach ghcr.io/${{ github.actor }}/bot:latest    
